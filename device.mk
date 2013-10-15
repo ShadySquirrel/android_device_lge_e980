@@ -32,6 +32,9 @@ PRODUCT_PACKAGES += \
 	lights.geefhd \
 	camera.geefhd
 
+PRODUCT_PACKAGES += \
+	hostapd_default.conf \
+
 PRODUCT_COPY_FILES += \
         device/lge/e980/mixer_paths.xml:system/etc/mixer_paths.xml
 
