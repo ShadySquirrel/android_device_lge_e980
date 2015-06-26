@@ -27,7 +27,7 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/e980/overlay
 # if the xhdpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-   
+
 PRODUCT_PACKAGES += \
 	lights.geefhd \
 	camera.geefhd
@@ -78,6 +78,9 @@ PRODUCT_COPY_FILES += \
        device/lge/e980/bluetooth_extras/xbin/hciconfig:system/xbin/hciconfig \
        device/lge/e980/bluetooth_extras/xbin/hcidump:system/xbin/hcidump \
        device/lge/e980/bluetooth_extras/xbin/hcitool:system/xbin/hcitool \
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_COPY_FILES += \
        device/lge/e980/initlogo.rle:root/initlogo.rle888 \
