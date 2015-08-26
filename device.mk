@@ -56,7 +56,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=480
+	ro.sf.lcd_density=400
 
 PRODUCT_PACKAGES += \
 	hwaddrs
