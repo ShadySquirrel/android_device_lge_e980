@@ -4,7 +4,7 @@
    "target_path": "device/lge/gproj-common"
  },
  {
-   "repository": "lge-kernel-gproj",
+   "repository": "e980-zeKrnl",
    "target_path": "kernel/lge/gproj"
  }
 ]
