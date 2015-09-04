@@ -31,5 +31,5 @@ PRODUCT_MANUFACTURER := lge
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/lge/e980_custom/device.mk)
-$(call inherit-product-if-exists, vendor/lge/e980_custom/e980-vendor.mk)
+$(call inherit-product, device/lge/e980/device.mk)
+$(call inherit-product-if-exists, vendor/lge/e980/e980-vendor.mk)
