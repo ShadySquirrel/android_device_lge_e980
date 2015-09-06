@@ -1,0 +1,2 @@
+# Allow viper4android to work without damn SELinux disabler
+allow mediaserver mediaserver_tmpfs:file { read write execute };
