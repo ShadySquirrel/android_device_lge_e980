@@ -15,4 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/e980.mk
+    $(LOCAL_DIR)/e980.mk \
+    $(LOCAL_DIR)/slim.mk
