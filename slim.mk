@@ -12,8 +12,8 @@ $(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
 $(call inherit-product, device/lge/e980/e980.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := E98x
-PRODUCT_NAME := slim_e98x
+PRODUCT_DEVICE := e980
+PRODUCT_NAME := slim_e980
 PRODUCT_BRAND := LGE
 PRODUCT_MODEL := LGE-E98x
 PRODUCT_MANUFACTURER := lge

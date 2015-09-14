@@ -1,10 +1,14 @@
 [
- {
-   "repository": "android_device_lge_gproj-common",
-   "target_path": "device/lge/gproj-common"
- },
- {
-   "repository": "e980-zeKrnl",
-   "target_path": "kernel/lge/gproj"
- }
+	{
+		"repository": "android_device_lge_gproj-common",
+		"target_path": "device/lge/gproj-common"
+	},
+	{
+		"repository": "e980-zeKrnl",
+		"target_path": "kernel/lge/gproj"
+	},
+	{
+		"repository": "proprietary_vendor_lge",
+		"target_path": "vendor/lge/e980"
+	}
 ]
