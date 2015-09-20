@@ -14,68 +14,11 @@
 # limitations under the License.
 #
 
-# This file includes all definitions that apply to ALL geefhd devices, and
-# are also specific to geefhd devices
+# This file includes all definitions that apply to ALL geehrc devices, and
+# are also specific to geehrc devices
 #
 # Everything in this directory will become public
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
-# This device is xhdpi.  However the platform doesn't
-# currently contain all of the bitmaps at xhdpi density so
-# we do this little trick to fall back to the hdpi version
-# if the xhdpi doesn't exist.
-PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
-PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-   
-PRODUCT_PACKAGES += \
-	lights.geefhd \
-	camera.geefhd
-
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/thermald-geefhd.conf:system/etc/thermald.conf
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/initlogo.rle:root/initlogo.rle888 \
-	$(LOCAL_PATH)/init.geefhd.rc:root/init.geefhd.rc \
-	$(LOCAL_PATH)/fstab.geefhd:root/fstab.geefhd \
-	$(LOCAL_PATH)/ueventd.geefhd.rc:root/ueventd.geefhd.rc
-
-PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
-
-PRODUCT_COPY_FILES += \
-       $(LOCAL_PATH)/keypad_8064.kl:system/usr/keylayout/gk-keypad-8064.kl
-
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=400
-
-PRODUCT_PACKAGES += \
-	hwaddrs
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.bt.bdaddr_path=/data/misc/bdaddr
-
-# This hw ships locked, work around it with loki
-PRODUCT_PACKAGES += \
-	loki.sh \
-	loki_tool_static_gproj \
-	recovery-transform.sh
-
-PRODUCT_COPY_FILES += \
-	frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
-
-PRODUCT_PROPERTY_OVERRIDES += \
-	ro.telephony.default_network=9 \
-	telephony.lteOnGsmDevice=1 \
-	camera2.portability.force_api=1 \
-	
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 PRODUCT_PACKAGES += \
@@ -271,24 +214,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/fetch-swv:system/bin/fetch-swv
 
-# Try to build the kernel
-TARGET_KERNEL_SOURCE := kernel/lge/gproj
-TARGET_KERNEL_CONFIG := cyanogenmod_e980_defconfig
+$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-LOCAL_KERNEL := $(TARGET_KERNEL_SOURCE)
-else
-LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
-PRODUCT_COPY_FILES := \
-    $(LOCAL_KERNEL):kernel
-    
 # This is the mako-specific audio package
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
-
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
-
-$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)

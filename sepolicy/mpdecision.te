@@ -1,0 +1,5 @@
+allow mpdecision self:process execmem;
+
+type_transition mpdecision socket_device:sock_file mpctl_socket;
+
+binder_use(mpdecision)
