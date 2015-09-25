@@ -120,7 +120,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
-BOARD_RIL_CLASS := device/lge/e980/ril
+BOARD_RIL_CLASS := ../../../device/lge/e980/ril
 
 BOARD_HARDWARE_CLASS := device/lge/e980/cmhw
 
@@ -128,8 +128,8 @@ TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
 # SELinux policies
-# qcom sepolicy
-include device/qcom/sepolicy/sepolicy.mk
-
 BOARD_SEPOLICY_DIRS += \
         device/lge/e980/sepolicy
+
+# qcom sepolicy
+include device/qcom/sepolicy/sepolicy.mk
