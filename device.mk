@@ -197,7 +197,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.ril.config=qcomdsds,nodefaultdata
 
 # Upto 3 layers can go through overlays
-PRODUCT_PROPERTY_OVERRIDES += persist.hwc.mdpcomp.enable=false
+PRODUCT_PROPERTY_OVERRIDES += persist.hwc.mdpcomp.enable=true
+
+# More overrides from stock build.prop
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.sf.hw=1 \
+	debug.egl.hw=1 \
+	debug.composition.type=dyn \
 
 PRODUCT_PACKAGES += \
 	librs_jni \
