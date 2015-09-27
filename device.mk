@@ -19,7 +19,7 @@
 #
 # Everything in this directory will become public
 
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += device/lge/e980/overlay
 
 # This device is xhdpi.  However the platform doesn't
 # currently contain all of the bitmaps at xhdpi density so
@@ -33,25 +33,25 @@ PRODUCT_PACKAGES += \
 	camera.geefhd
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/mixer_paths.xml:system/etc/mixer_paths.xml
+        device/lge/e980/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/thermald-geefhd.conf:system/etc/thermald.conf
+	device/lge/e980/thermald-geefhd.conf:system/etc/thermald.conf
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/initlogo.rle:root/initlogo.rle888 \
-	$(LOCAL_PATH)/init.geefhd.rc:root/init.geefhd.rc \
-	$(LOCAL_PATH)/fstab.geefhd:root/fstab.geefhd \
-	$(LOCAL_PATH)/ueventd.geefhd.rc:root/ueventd.geefhd.rc
+	device/lge/e980/initlogo.rle:root/initlogo.rle888 \
+	device/lge/e980/init.geefhd.rc:root/init.geefhd.rc \
+	device/lge/e980/fstab.geefhd:root/fstab.geefhd \
+	device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+        device/lge/e980/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_COPY_FILES += \
-       $(LOCAL_PATH)/keypad_8064.kl:system/usr/keylayout/gk-keypad-8064.kl
+       device/lge/e980/keypad_8064.kl:system/usr/keylayout/gk-keypad-8064.kl
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
+	device/lge/e980/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.sf.lcd_density=400
@@ -76,7 +76,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	telephony.lteOnGsmDevice=1 \
 	camera2.portability.force_api=1 \
 	
-DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS := device/lge/e980/overlay
 
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -96,35 +96,35 @@ PRODUCT_PACKAGES += \
         librs_jni
 
 PRODUCT_COPY_FILES += \
-        $(LOCAL_PATH)/init.gee-common.rc:root/init.gee-common.rc \
-        $(LOCAL_PATH)/init.gee.usb.rc:root/init.gee.usb.rc
+        device/lge/e980/init.gee-common.rc:root/init.gee-common.rc \
+        device/lge/e980/init.gee.usb.rc:root/init.gee.usb.rc
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/audio_policy.conf:system/etc/audio_policy.conf
+	device/lge/e980/audio_policy.conf:system/etc/audio_policy.conf
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/qosmgr_rules.xml:system/etc/qosmgr_rules.xml
+	device/lge/e980/qosmgr_rules.xml:system/etc/qosmgr_rules.xml
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/media_profiles.xml:system/etc/media_profiles.xml \
-	$(LOCAL_PATH)/media_codecs.xml:system/etc/media_codecs.xml \
+	device/lge/e980/media_profiles.xml:system/etc/media_profiles.xml \
+	device/lge/e980/media_codecs.xml:system/etc/media_codecs.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
 	frameworks/av/media/libstagefright/data/media_codecs_google_video.xml:system/etc/media_codecs_google_video.xml
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/kickstart_checker.sh:system/etc/kickstart_checker.sh
+	device/lge/e980/kickstart_checker.sh:system/etc/kickstart_checker.sh
 
 # Prebuilt kl and kcm keymaps
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
-	$(LOCAL_PATH)/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
-	$(LOCAL_PATH)/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
-	$(LOCAL_PATH)/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
+	device/lge/e980/hs_detect.kl:system/usr/keylayout/hs_detect.kl \
+	device/lge/e980/pmic8xxx_pwrkey.kl:system/usr/keylayout/pmic8xxx_pwrkey.kl \
+	device/lge/e980/hs_detect.kcm:system/usr/keychars/hs_detect.kcm \
+	device/lge/e980/pmic8xxx_pwrkey.kcm:system/usr/keychars/pmic8xxx_pwrkey.kcm
 
 # Prebuilt input device calibration files
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/touch_dev.idc:system/usr/idc/touch_dev.idc \
-	$(LOCAL_PATH)/touch_dev.kl:system/usr/keylayout/touch_dev.kl
+	device/lge/e980/touch_dev.idc:system/usr/idc/touch_dev.idc \
+	device/lge/e980/touch_dev.kl:system/usr/keylayout/touch_dev.kl
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -146,7 +146,7 @@ PRODUCT_COPY_FILES += \
 
 # GPS configuration
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/gps.conf:system/etc/gps.conf
+	device/lge/e980/gps.conf:system/etc/gps.conf
 
 # NFC packages
 PRODUCT_PACKAGES += \
@@ -158,9 +158,9 @@ PRODUCT_PACKAGES += \
 
 # NFCEE access control
 ifeq ($(TARGET_BUILD_VARIANT),user)
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access.xml
+    NFCEE_ACCESS_PATH := device/lge/e980/nfc/nfcee_access.xml
 else
-    NFCEE_ACCESS_PATH := $(LOCAL_PATH)/nfc/nfcee_access_debug.xml
+    NFCEE_ACCESS_PATH := device/lge/e980/nfc/nfcee_access_debug.xml
 endif
 
 # NFC access control + feature files + configuration
@@ -232,7 +232,7 @@ PRODUCT_PACKAGES += \
 # Voice processing
 PRODUCT_PACKAGES += libqcomvoiceprocessing
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/audio_effects.conf:system/vendor/etc/audio_effects.conf
+    device/lge/e980/audio_effects.conf:system/vendor/etc/audio_effects.conf
 
 PRODUCT_PACKAGES += \
         libmm-omxcore \
@@ -275,7 +275,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	persist.sys.usb.config=mtp
 
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/fetch-swv:system/bin/fetch-swv
+	device/lge/e980/fetch-swv:system/bin/fetch-swv
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/lge/gproj

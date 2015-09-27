@@ -27,7 +27,7 @@ ifneq ($(filter geefhd e980,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
-include $(call first-makefiles-under,$(LOCAL_PATH))
+include $(call first-makefiles-under, device/lge/e980)
 
 endif
 
