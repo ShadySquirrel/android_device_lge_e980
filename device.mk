@@ -287,7 +287,7 @@ else
 LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
 
-PRODUCT_COPY_FILES := \
+PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
     
 # This is the mako-specific audio package
