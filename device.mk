@@ -76,8 +76,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	telephony.lteOnGsmDevice=1 \
 	camera2.portability.force_api=1 \
 	
-DEVICE_PACKAGE_OVERLAYS := device/lge/e980/overlay
-
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
