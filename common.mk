@@ -79,9 +79,9 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# AudioFX
-PRODUCT_PACKAGES += \
-    AudioFX
+# ViPER4Android. AudioFX is removed from this ROM :)
+PRODUCT_COPY_FILES += \
+	vendor/ShadySquirrel/apps/ViPER4Android/ViPER4Android.apk:/system/priv-app/ViPER4Android/ViPER4Android.apk
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
