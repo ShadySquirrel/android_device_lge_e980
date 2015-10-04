@@ -2,8 +2,10 @@
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-# Inherit some common CM stuff.
-$(call inherit-product, vendor/slim/config/common_full_phone.mk)
+# Include custom common.mk and Slim's common_apn.mk
+$(call inherit-product, device/lge/e980/common.mk)
+$(call inherit-product, vendor/slim/config/common_apn.mk)
+
 
 # Enhanced NFC
 $(call inherit-product, vendor/slim/config/nfc_enhanced.mk)
@@ -24,4 +26,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 		PRIVATE_BUILD_DESC="geefhd_open_tw-user 4.4.2 KOT49I.E98820c E98820c.1417865734 release-keys"
 
 # Enable Torch
-PRODUCT_PACKAGES += Torch
+PRODUCT_PACKAGES += \
+	Torch \
+	Stk
