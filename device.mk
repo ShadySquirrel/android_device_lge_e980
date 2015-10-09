@@ -40,7 +40,7 @@ PRODUCT_COPY_FILES += \
 
 # Add custom init.d scripts
 PRODUCT_COPY_FILES += \
-        device/lge/e980/init.d/00-fix_overlays.sh:system/etc/00-fix_overlays.sh
+        device/lge/e980/init.d/00-fix_overlays.sh:system/etc/init.d/00-fix_overlays.sh
 
 PRODUCT_COPY_FILES += \
        device/lge/e980/initlogo.rle:root/initlogo.rle888 \
