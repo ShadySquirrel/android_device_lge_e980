@@ -39,8 +39,9 @@ PRODUCT_COPY_FILES += \
         device/lge/e980/thermald-geefhd.conf:system/etc/thermald.conf
 
 # Add custom init.d scripts
-PRODUCT_COPY_FILES += \
-        device/lge/e980/init.d/00-fix_overlays.sh:system/etc/init.d/00-fix_overlays.sh
+PRODUCT_COPY_FILES += \git 
+        device/lge/e980/init.d/sysinit:system/bin/sysinit
+        device/lge/e980/init.d/20fix_overlays:system/etc/init.d/99fix_overlays
 
 PRODUCT_COPY_FILES += \
        device/lge/e980/initlogo.rle:root/initlogo.rle888 \
