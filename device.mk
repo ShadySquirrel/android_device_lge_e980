@@ -40,6 +40,7 @@ PRODUCT_COPY_FILES += \
 
 # Add custom init.d scripts
 PRODUCT_COPY_FILES += \
+        device/lge/e980/init.d/sysinit:system/bin/sysinit
         device/lge/e980/init.d/00-fix_overlays.sh:system/etc/init.d/00-fix_overlays.sh
 
 PRODUCT_COPY_FILES += \

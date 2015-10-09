@@ -1,0 +1,47 @@
+#!/system/bin/sh
+
+# Begin.
+
+# overlays path
+OVERLAY_PATH="/system/vendor/overlay"
+
+# Log tag
+TAG="[OVERLAYS_ENABLER]"
+
+####### Start logging and working... #######
+
+# Mount system as RW
+su -c "mount -o rw,remount -t ext4 /system"
+log -p i -t OverlaysPermFix "$TAG: /system mounted as RW"
+	
+log -p i -t OverlaysPermFix "$TAG: checking if $OVERLAY_PATH exists..."
+# Check if folder exists
+if [ ! -e "$OVERLAY_PATH" ]; then
+	# It doesn't exist. Let's create it then!
+	log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH doesn't exist, creating!"
+	
+	su -c "mkdir -p $OVERLAY_PATH"
+	if [ -e "$OVERLAY_PATH" ]; then
+		log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH created!"
+	else
+		log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH not created! Remounting and bailing out..."
+		su -c "mount -o ro,remount -t ext4 /system"
+		exit
+	fi
+else
+	log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH found."
+fi
+
+log -p i -t OverlaysPermFix "$TAG: changing permissions..."
+# Now change permissions to 777
+su -c "chmod 777 $OVERLAY_PATH"
+
+log -p i -t OverlaysPermFix "$TAG: changing ownership"
+# And change ownership to root:shell
+su -c "chown root:shell $OVERLAY_PATH"
+
+# Unmount before exit.
+log -p i -t OverlaysPermFix "$TAG: Finished. Unmounting."
+su -c "mount -o ro,remount -t ext4 /system"
+
+# End.
