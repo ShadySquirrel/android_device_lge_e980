@@ -36,13 +36,17 @@ PRODUCT_COPY_FILES += \
         device/lge/e980/mixer_paths.xml:system/etc/mixer_paths.xml
 
 PRODUCT_COPY_FILES += \
-	device/lge/e980/thermald-geefhd.conf:system/etc/thermald.conf
+        device/lge/e980/thermald-geefhd.conf:system/etc/thermald.conf
+
+# Add custom init.d scripts
+PRODUCT_COPY_FILES += \
+        device/lge/e980/init.d/00-fix_overlays.sh:system/etc/00-fix_overlays.sh
 
 PRODUCT_COPY_FILES += \
-	device/lge/e980/initlogo.rle:root/initlogo.rle888 \
-	device/lge/e980/init.geefhd.rc:root/init.geefhd.rc \
-	device/lge/e980/fstab.geefhd:root/fstab.geefhd \
-	device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
+       device/lge/e980/initlogo.rle:root/initlogo.rle888 \
+       device/lge/e980/init.geefhd.rc:root/init.geefhd.rc \
+       device/lge/e980/fstab.geefhd:root/fstab.geefhd \
+       	device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
 
 PRODUCT_COPY_FILES += \
         device/lge/e980/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
