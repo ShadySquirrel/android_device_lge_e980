@@ -38,10 +38,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/lge/e980/thermald-geefhd.conf:system/etc/thermald.conf
 
-# Add custom init.d scripts
+# sysinit was missing...
 PRODUCT_COPY_FILES += \
-        device/lge/e980/init.d/sysinit:system/bin/sysinit
-        device/lge/e980/init.d/20fix_overlays:system/etc/init.d/99fix_overlays
+        device/lge/e980/init.d/sysinit:system/bin/sysinit \
 
 PRODUCT_COPY_FILES += \
        device/lge/e980/initlogo.rle:root/initlogo.rle888 \
