@@ -76,6 +76,10 @@ on property:service.adb.tcp.port=-1
     stop adbd
     start adbd
 
+# Fix /system/vendor/overlay folder perms this way [tmp fix]
+on property:sys.boot_completed=1
+    exec /system/bin/RRO_perm.sh
+
 # sysinit (/system/etc/init.d)
 service sysinit /system/bin/sysinit
     user root

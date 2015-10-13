@@ -42,14 +42,18 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/lge/e980/init.d/sysinit:system/bin/sysinit \
 
+# Add RRO_permissions.sh to /system/bin
+PRODUCT_COPY_FILES += \
+        device/lge/e980/RRO_perm.sh:system/bin/RRO_perm.sh \
+
 PRODUCT_COPY_FILES += \
        device/lge/e980/initlogo.rle:root/initlogo.rle888 \
        device/lge/e980/init.geefhd.rc:root/init.geefhd.rc \
        device/lge/e980/fstab.geefhd:root/fstab.geefhd \
-       	device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
+       device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
 
 PRODUCT_COPY_FILES += \
-        device/lge/e980/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
+       device/lge/e980/recovery/postrecoveryboot.sh:recovery/root/sbin/postrecoveryboot.sh
 
 PRODUCT_COPY_FILES += \
        device/lge/e980/keypad_8064.kl:system/usr/keylayout/gk-keypad-8064.kl
