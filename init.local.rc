@@ -64,9 +64,13 @@ on boot
     # Persistent properties (only created if persist exists)
     mkdir /persist/properties 0770 system system
     
-    # Allow executing of sysinit
+    # Allow execution of sysinit
 	chown root system /system/bin/sysinit
 	chmod 0755 /system/bin/sysinit
+
+	# Allow execution of RRO_perm.sh
+	chown root system /system/bin/RRO_perm.sh
+	chmod 0755 /system/bin/RRO_perm.sh
 
 # adb over network
 on property:service.adb.tcp.port=5555

@@ -41,13 +41,13 @@ log -p d -t OverlaysPermFix "-----------------------------------------"
 
 # Mount system as RW
 log -p i -t OverlaysPermFix "$TAG: Mounting /system as read-write"
-$mount_path -o remount,rw -t ext4 /system
+$su_path -c "$mount_path -o remount,rw -t ext4 /system"
 commandOut=$?
 log -p i -t OverlaysPermFix "$TAG: command returned $commandOut"
 
 # Check if system is mounted as RW
 if [ -e $mktemp_path ]; then
-	mktemp -p /system/
+	$su_path -c "mktemp -p /system/"
 	out=$?
 	if [[ $out != 1 ]]; then
 		log -p d -t OverlaysPermFix "$TAG: /system is mounted as RW"
@@ -66,7 +66,7 @@ if [ ! -e "$OVERLAY_PATH" ]; then
 	log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH doesn't exist, creating!"
 	
 	#$CMD_PATHsu -c "$CMD_PATHmkdir -p $OVERLAY_PATH"
-	$mkdir_path -p $OVERLAY_PATH
+	$su_path -c "$mkdir_path -p $OVERLAY_PATH"
 	commandOut=$?
 	log -p i -t OverlaysPermFix "$TAG: command returned $commandOut: $commandText"
 	
@@ -74,7 +74,7 @@ if [ ! -e "$OVERLAY_PATH" ]; then
 		log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH created!"
 	else
 		log -p i -t OverlaysPermFix "$TAG: $OVERLAY_PATH not created! Remounting and bailing out..."
-		$mount_path -o remount,ro -t ext4 /system
+		$su_path -c "$mount_path -o remount,ro -t ext4 /system"
 		commandOut=$?
 		log -p i -t OverlaysPermFix "$TAG: command returned $commandOut"
 		exit
@@ -85,19 +85,19 @@ fi
 
 log -p i -t OverlaysPermFix "$TAG: changing permissions..."
 # Now change permissions to 777
-$chmod_path 0777 $OVERLAY_PATH
+$su_path -c "$chmod_path 0777 $OVERLAY_PATH"
 commandOut=$?
 log -p i -t OverlaysPermFix "$TAG: command returned $commandOut"
 
 log -p i -t OverlaysPermFix "$TAG: changing ownership"
 # And change ownership to root:shell
-$chown_path root:shell $OVERLAY_PATH
+$su_path -c "$chown_path root:shell $OVERLAY_PATH"
 commandOut=$?
 log -p i -t OverlaysPermFix "$TAG: command returned $commandOut"
 
 # Unmount before exit.
 log -p i -t OverlaysPermFix "$TAG: Finished. Unmounting."
-$mount_path	 -o remount,ro -t ext4 /system
+$su_path -c "$mount_path	 -o remount,ro -t ext4 /system"
 commandOut=$?
 log -p i -t OverlaysPermFix "$TAG: command returned $commandOut"
 
