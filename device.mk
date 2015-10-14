@@ -257,8 +257,10 @@ PRODUCT_PACKAGES += \
 	libgps.utils \
 	gps.msm8960
 
+# ShadySquirrel's edit: add & enable secure ADB.
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	rild.libpath=/system/lib/libril-qc-qmi-1.so
+	rild.libpath=/system/lib/libril-qc-qmi-1.so \
+	ro.adb.secure=1 \
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	drm.service.enabled=true
