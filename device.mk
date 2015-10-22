@@ -83,7 +83,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.telephony.default_network=9 \
 	telephony.lteOnGsmDevice=1 \
 	camera2.portability.force_api=1 \
-	
+
+# Add pm.sleep_mode by popular request.
+PRODUCT_PROPERTY_OVERRIDES += \
+	pm.sleep_mode=1 \
+
 PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
