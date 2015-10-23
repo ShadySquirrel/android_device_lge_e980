@@ -84,13 +84,8 @@ PRODUCT_PACKAGES += \
     LiveWallpapersPicker \
     PhaseBeam
 
-# ViPER4Android. AudioFX is removed from this ROM :)
-PRODUCT_COPY_FILES += \
-	vendor/ShadySquirrel/apps/ViPER4Android/ViPER4Android.apk:/system/priv-app/ViPER4Android/ViPER4Android.apk
-
-# Kernel Adiutor, since Slim doesn't have any performance control software
-PRODUCT_COPY_FILES += \
-	vendor/ShadySquirrel/apps/KernelAdiutor/KernelAdiutor.apk:system/priv-app/KernelAdiutor/KernelAdiutor.apk
+# Stop using prebuilt V4A and KernelAdiutor. Import vendor/ShadySquirrel/config/common.mk instead
+$(call inherit-product, vendor/ShadySquirrel/config/common.mk)
 
 # CM Hardware Abstraction Framework
 PRODUCT_PACKAGES += \
