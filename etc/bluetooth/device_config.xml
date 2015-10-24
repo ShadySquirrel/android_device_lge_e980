@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Device>
+    <Profile>
+        <OPP OPP_1.1="false" OPP_1.2="true"/>
+        <A2DP A2DP_SINK_BCM="true"
+              A2DP_SINK_COMMON="true"/>
+        <AVRCP AVRCP_1.4="true"/>
+    </Profile>
+    <UXGUI>
+        <BTHELP BTHELP="true"/>
+        <BTUX BTUX_4.1="true"/>
+    </UXGUI>
+    <INVISIBLE_ADDR>
+        <INVISIBLE_ADDR INVISIBLE_ADDR="true"/>
+    </INVISIBLE_ADDR>
+    <HEADSET_BATTERY_STATUS>
+       <BATTERY_STATUS BATTERY_STATUS_DISPLAY="true"/>
+    </HEADSET_BATTERY_STATUS>
+    <BT_TTS>
+       <INBAND_RING INBAND_RING_ENABLE="true"/>
+    </BT_TTS>
+</Device>
