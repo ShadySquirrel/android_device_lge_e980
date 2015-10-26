@@ -177,7 +177,7 @@ endif
 ifndef SLIM_BUILD_TYPE
     SLIM_BUILD_TYPE := UNOFFICIAL
     PLATFORM_VERSION_CODENAME := UNOFFICIAL
-    SLIM_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+    SLIM_POSTFIX := -$(shell date +"%Y%m%d")
 endif
 
 # SlimIRC
