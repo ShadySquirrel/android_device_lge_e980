@@ -34,6 +34,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
 	hostapd_default.conf \
+	wpa_supplicant_overlay.conf \
+	p2p_supplicant_overlay.conf
 
 PRODUCT_COPY_FILES += \
         device/lge/e980/mixer_paths.xml:system/etc/mixer_paths.xml
