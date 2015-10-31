@@ -59,8 +59,16 @@ EnforceMasterRole KEY_BDADDR="00:07:62:*" KEY_DIR_ALL="0"
 /* Microsoft Elite Keyboard */
 EnforceMasterRole KEY_BDADDR="00:50:f2:*" KEY_DIR_ALL="0"
 
+#BT_S: from KK OS
 /* Rapoo E6300 Keyboard */
 EnforceMasterRole KEY_BDADDR="6c:5d:63:*" KEY_LMP_MFCT="143" KEY_LMP_VER="4:8754" KEY_DIR_ALL="0"
+#BT_E: from KK OS
+
+//BT_S : [CONBT-1283] IN-BK01 keyboard reconnection fail when keyboard OOR or pwr recycle
+/* IN_BK01 keyboard --- CSP#873460 */  
+EnforceMasterRole KEY_BDADDR="0c:fc:83:*" KEY_DIR_ALL="0"
+//BT_E : [CONBT-1283] IN-BK01 keyboard reconnection fail when keyboard OOR or pwr recycle
+
 
 /* CSR based headsets */
 
@@ -168,6 +176,18 @@ HOGPBlacklist KEY_BDADDR="00:15:9E:*"
 /*  iBuffalo BSMBB09DS */
 HOGPBlacklist KEY_BDADDR="00:1B:DC:*"
 
+
+#---------------------------------------------------------------------
+# :: Prevent using default io key distribution for SMP for HOGP
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+/* Microsoft Arc Mouse */
+HOGPIOKeyBlacklist  KEY_BDADDR="F1:9C:A7:*"
+HOGPIOKeyBlacklist  KEY_BDADDR="FC:70:32:*"
+
 #---------------------------------------------------------------------
 # :: Prevent SDP with some HID devices during incoming connections
 #
@@ -179,6 +199,8 @@ HOGPBlacklist KEY_BDADDR="00:1B:DC:*"
 HidSdpBlacklist  KEY_LMP_MFCT="76"
 /* MICROSOFT MOUSE */
 HidSdpBlacklist  KEY_LMP_MFCT="9"
+/* SONY VAIO MOUSE */
+HidSdpBlacklist  KEY_LMP_MFCT="15"
 
 #---------------------------------------------------------------------
 # List of HID keyboards for which the NUMLOCK state needs to be
@@ -205,7 +227,61 @@ HidKeybNumLock KEY_HIDKB_PRID="B30B" KEY_HIDKB_VNDID="046D"
 
 /* Ford Sync Carkit (Device Name: SYNC Mfr:10 (CSR), LMP=3, SUBV=0x0C5C) */
 AvrcKeyReleaseQuirk KEY_NAME="SYNC" KEY_LMP_MFCT="10" KEY_LMP_VER="3:3164"
+//BT_S : [CONBT-1161] FF when pushed Forward button in MTS255
+/* MTS255 (Device Name: MTS255 Mfr:10, LMP=3, SUBV=0x11B4) */
+AvrcKeyReleaseQuirk KEY_BDADDR="00:1e:b2:*"
+//BT_E : [CONBT-1161] FF when pushed Forward button in MTS255
 
+
+#---------------------------------------------------------------------
+# :: AVRC absolute volume fails for certain devices
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+//BT_S : [CONBT-1139] BD addr must be written in lower case
+/* LG HBS-730 */
+AvrcAbsVolBlacklist KEY_BDADDR="00:18:6b:*"
+/* VW Passat */
+AvrcAbsVolBlacklist KEY_BDADDR="00:26:7e:*"
+//BT_E : [CONBT-1139] BD addr must be written in lower case
+
+//BT_S : [CONBT-1139] Support WhiteList for AbsoluteVolume control
+#---------------------------------------------------------------------
+# :: AVRC absolute volume support for certain devices
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+
+/* Sony SBH50 */
+AvrcAbsVolWhitelist KEY_BDADDR="94:ce:2c:*"
+
+/* Sony wm600 */
+AvrcAbsVolWhitelist KEY_BDADDR="30:17:c8:*"
+
+/* BlueSoleil dongle */
+AvrcAbsVolWhitelist KEY_BDADDR="00:15:83:*"
+
+/* PTS dongle */
+AvrcAbsVolWhitelist KEY_BDADDR="00:80:98:*"
+
+/* Plantronics Backbeat Go */
+AvrcAbsVolWhitelist KEY_BDADDR="48:c1:ac:*"
+
+/* PTS dongle 2 */
+AvrcAbsVolWhitelist KEY_BDADDR="00:1b:dc:*"
+
+/* Demant */
+AvrcAbsVolWhitelist KEY_BDADDR="00:19:8e:*"
+
+/* Apple */
+AvrcAbsVolWhitelist KEY_BDADDR="04:88:e2:*"
+
+/* Bose */
+AvrcAbsVolWhitelist KEY_BDADDR="00:0c:8a:*"
+//BT_S : [CONBT-1139] Support WhiteList for AbsoluteVolume control
 #---------------------------------------------------------------------
 # :: Initiate Av connect even when sdp fails
 #
@@ -213,11 +289,22 @@ AvrcKeyReleaseQuirk KEY_NAME="SYNC" KEY_LMP_MFCT="10" KEY_LMP_VER="3:3164"
 #
 #      KEY_BDADDR
 
+/* Denso carkit */
 AvConnectOnSdpFail KEY_BDADDR="00:1e:3d:*"
+/* Audi carkit */
 AvConnectOnSdpFail KEY_BDADDR="00:1b:fb:*"
 
 #---------------------------------------------------------------------
+# :: Apple HId devices
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_LMP_MFCT
 
+/* APPLE  MOUSE and KEYBOARD*/
+AppleHIDDevice  KEY_LMP_MFCT="76"
+#---------------------------------------------------------------------
+#BT_S: from KK OS
 # :: Send AVRC Key release event for carkits that do not send
 #    Release key event for RC key press
 #
@@ -227,10 +314,9 @@ AvConnectOnSdpFail KEY_BDADDR="00:1b:fb:*"
 #      KEY_BDADDR
 
 /* Toyota Touch&Go Carkit (Device Name: Toyota Touch&Go) */
-AvrcDisableSongPos KEY_NAME="Toyota Touch&Go" KEY_BDADDR="00:0E:9F:*"
-
+AvrcDisableSongPos KEY_NAME="Toyota Touch&Go" KEY_BDADDR="00:0e:9f:*"
+#BT_E: from KK OS
 #---------------------------------------------------------------------
-
 # :: Test exceptions
 #
 #    Matched towards testcases defined in iop_db_test.c
@@ -248,8 +334,30 @@ ExitSniffOnSco KEY_BDADDR="12:34:56:*"
 /* sony dr-bt50 headset */
 #EnforceMasterRole KEY_BDADDR="00:24:be:*" KEY_LMP_VER="3:3413" KEY_LMP_MFCT="10"
 
+
+
 #---------------------------------------------------------------------
-# :: Delay AV START command
+# :: Delay AG SCO Connection delayed command
+#
+#    AVAILABLE KEYS :
+#
+#      KEY_BDADDR
+#      KEY_LMP_VER
+#      KEY_LMP_MFCT
+
+/* Benz Car-Kit */
+ScoConnectionDelayed KEY_BDADDR="64:d4:bd:*" KEY_LMP_VER="4:8241" KEY_LMP_MFCT="10"
+#---------------------------------------------------------------------
+
+# :: Sniff Subrating exceptions for AV
+#
+# AVAILABLE KEYS :
+#
+# KEY_BDADDR
+
+#---------------------------------------------------------------------
+#---------------------------------------------------------------------
+# :: Delay AV Reconfig Request
 #
 #    AVAILABLE KEYS :
 #
@@ -258,17 +366,7 @@ ExitSniffOnSco KEY_BDADDR="12:34:56:*"
 #      KEY_LMP_MFCT
 
 /* Sony Ericsson MW600 */
-DelayAVStartStream KEY_NAME="MW600"
-#DelayAVStartStream KEY_NAME="MW600" KEY_BDADDR="58:17:0C:*" KEY_LMP_VER="4:6431" KEY_LMP_MFCT="13"
-
+DelayAVReconfigReq KEY_NAME="MW600"
+/* GM Cruze 1.8 Carkits */
+AvSsrDisable KEY_BDADDR="00:0B:24:*" KEY_LMP_MFCT="10" KEY_LMP_VER="4:6300"
 #---------------------------------------------------------------------
-# :: Don't close the server of MAP in rfcomm.
-#
-#    AVAILABLE KEYS :
-#
-#      KEY_BDADDR
-
-/* Ford Sync Carkit */
-RfcommExceptMapServerInClose KEY_NAME="SYNC"
-
-
