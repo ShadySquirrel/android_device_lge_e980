@@ -127,12 +127,12 @@ BOARD_HARDWARE_CLASS := device/lge/e980/cmhw
 TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
+# qcom sepolicy
+include device/qcom/sepolicy/sepolicy.mk
+
 # SELinux policies
 BOARD_SEPOLICY_DIRS += \
         device/lge/e980/sepolicy
-
-# qcom sepolicy
-include device/qcom/sepolicy/sepolicy.mk
 
 # Enable dex-preoptimization to speed up first boot sequence
 ifeq ($(HOST_OS),linux)
