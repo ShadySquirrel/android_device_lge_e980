@@ -230,6 +230,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.audio.fluence.mode=endfire \
 	persist.audio.lowlatency.rec=false
 
+# Bluetooth additional config...
+PRODUCT_PROPERTY_OVERRIDES += \
+	bluetooth.chip.vendor=brcm \
+	ro.product.bluetooth=4.0 \
+	ro.bt.chipset=Broadcom BCM4334 \
+	ro.bt.version=4.0 \
+	ro.bt.stack=BTL-A \
+	ro.bt.stack.version=5.0 \
+	ro.bt.profiles=12806403 \
+	service.brcm.bt.activation=0 \
+	service.brcm.bt.srv_active=0 \
+	service.brcm.bt.hcid_active=0 \
+	service.brcm.bt.btld=0 \
+	service.brcm.bt.btld_pid=0 \
+	service.brcm.bt.avrcp_pass_thru=0 \
+	service.brcm.bt.avrcp_toggle=1 \
+	service.brcm.bt.btport_redir_on=1 \
 
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \
