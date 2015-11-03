@@ -251,6 +251,26 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	service.brcm.bt.avrcp_toggle=1 \
 	service.brcm.bt.btport_redir_on=1 \
 
+# Better internet browsing & download speed
+PRODUCT_PROPERTY_OVERRIDES += \
+	net.tcp.buffersize.default=4096,87380,256960,4096, 16384,256960 \
+	net.tcp.buffersize.wifi=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.umts=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.gprs=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.edge=4096,87380,256960,4096,163 84,256960 \
+	net.tcp.buffersize.hspa=6144,87380,524288,6144,163 84,262144 \
+	net.tcp.buffersize.lte=524288,1048576,2097152,5242 88,1048576,2097152 \
+	net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,8 7380,1048576 \
+	net.tcp.buffersize.evdo_b=6144,87380,1048576,6144, 87380,1048576 \
+
+# Set ro.wifi.channels, may help with hotspot
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.wifi.channels=13 13 \
+
+# Random overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+	debug.performance.tuning=1 \
+
 # Do not power down SIM card when modem is sent to Low Power Mode.
 PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.apm_sim_not_pwdn=1
