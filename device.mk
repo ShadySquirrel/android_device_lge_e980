@@ -233,8 +233,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Bluetooth additional config...
 PRODUCT_PROPERTY_OVERRIDES += \
 	bluetooth.chip.vendor=brcm \
+	ro.bluetooth.request.master=true \
+	ro.bluetooth.remote.autoconnect=true \
+	ro.bluetooth.PANenable = 1 \
+	bluetooth.a2dp.sink.enabled=false \
 	ro.product.bluetooth=4.0 \
-	ro.bt.chipset=Broadcom BCM4334 \
 	ro.bt.version=4.0 \
 	ro.bt.stack=BTL-A \
 	ro.bt.stack.version=5.0 \
@@ -269,6 +272,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	debug.sf.hw=1 \
 	debug.egl.hw=1 \
 	debug.composition.type=gpu \
+	video.accelerate.hw=1 \
+	wlan.chip.vendor=brcm \
+	wlan.chip.version=bcm4334 \
+	ro.media.enc.jpeg.quality=100 \
+	af.resampler.quality=255 \
+	
 
 PRODUCT_PACKAGES += \
 	librs_jni \
