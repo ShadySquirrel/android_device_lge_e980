@@ -47,10 +47,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
         device/lge/e980/init.d/sysinit:system/bin/sysinit \
 
-# Add RRO_permissions.sh to /system/bin
-PRODUCT_COPY_FILES += \
-        device/lge/e980/RRO_perm.sh:system/bin/RRO_perm.sh \
-
 # Add bluetooth configuration from stock
 PRODUCT_COPY_FILES += \
        device/lge/e980/bluetooth_extras/etc/audio.conf:system/etc/bluetooth/audio.conf \
@@ -238,6 +234,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bluetooth.PANenable = 1 \
 	bluetooth.a2dp.sink.enabled=false \
 	ro.product.bluetooth=4.0 \
+	ro.bt.chipset=Broadcom[SPACE]BCM4334 \
 	ro.bt.version=4.0 \
 	ro.bt.stack=BTL-A \
 	ro.bt.stack.version=5.0 \
