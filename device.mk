@@ -372,7 +372,7 @@ PRODUCT_COPY_FILES += \
 
 # Try to build the kernel
 TARGET_KERNEL_SOURCE := kernel/lge/gproj
-TARGET_KERNEL_CONFIG := cyanogenmod_e980_defconfig
+TARGET_KERNEL_CONFIG := zeKrnl_e980_defconfig
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 LOCAL_KERNEL := $(TARGET_KERNEL_SOURCE)
