@@ -80,7 +80,7 @@ PRODUCT_COPY_FILES += \
        device/lge/e980/bluetooth_extras/xbin/hcitool:system/xbin/hcitool \
 
 PRODUCT_COPY_FILES += \
-       device/lge/e980/initlogo.rle:root/initlogo.rle888 \
+       device/lge/e980/initlogo-shady.rle:root/initlogo.rle888 \
        device/lge/e980/init.geefhd.rc:root/init.geefhd.rc \
        device/lge/e980/fstab.geefhd:root/fstab.geefhd \
        device/lge/e980/ueventd.geefhd.rc:root/ueventd.geefhd.rc
