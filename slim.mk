@@ -3,7 +3,7 @@ TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
 # Include Slim's common.mk and Slim's common_apn.mk
-$(call inherit-product, device/slim/config/common.mk)
+$(call inherit-product, vendor/slim/config/common.mk)
 $(call inherit-product, vendor/slim/config/common_apn.mk)
 
 
