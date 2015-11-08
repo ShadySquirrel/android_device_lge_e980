@@ -234,7 +234,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bluetooth.PANenable = 1 \
 	bluetooth.a2dp.sink.enabled=false \
 	ro.product.bluetooth=4.0 \
-	ro.bt.chipset=Broadcom[SPACE]BCM4334 \
+	ro.bt.chipset=Broadcom BCM4334 \
 	ro.bt.version=4.0 \
 	ro.bt.stack=BTL-A \
 	ro.bt.stack.version=5.0 \
@@ -262,7 +262,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Set ro.wifi.channels, may help with hotspot
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.wifi.channels=13[SPACE]13 \
+	ro.wifi.channels=13 13 \
 
 # Random overrides
 PRODUCT_PROPERTY_OVERRIDES += \
