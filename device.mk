@@ -381,6 +381,9 @@ endif
 
 PRODUCT_COPY_FILES += \
        $(LOCAL_KERNEL):kernel
+
+# Call my vendor makefile
+$(call inherit-product, vendor/ShadySquirrel/config/common.mk)
     
 # This is the mako-specific audio package
 $(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
