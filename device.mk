@@ -27,7 +27,7 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/e980/overlay
 # if the xhdpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
-
+   
 PRODUCT_PACKAGES += \
        lights.geefhd \
        camera.geefhd
