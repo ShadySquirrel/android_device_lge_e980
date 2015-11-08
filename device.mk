@@ -95,7 +95,7 @@ PRODUCT_COPY_FILES += \
 	device/lge/e980/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=400
+	ro.sf.lcd_density=420
 
 PRODUCT_PACKAGES += \
 	hwaddrs
