@@ -65,6 +65,7 @@ PRODUCT_COPY_FILES += \
        device/lge/e980/bluetooth_extras/etc/iop_bt.db:system/etc/bluetooth/iop_bt.db \
        device/lge/e980/bluetooth_extras/etc/main.conf:system/etc/bluetooth/main.conf \
        device/lge/e980/bluetooth_extras/etc/network.conf:system/etc/bluetooth/network.conf \
+       device/lge/e980/bluetooth_extras/etc/ble_stack.conf:system/etc/bluetooth/ble_stack.conf \
 
 # Add bluetooth framework file...
 PRODUCT_COPY_FILES += \
