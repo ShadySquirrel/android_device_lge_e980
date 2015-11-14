@@ -1,0 +1,82 @@
+# ADB
+ro.adb.secure=1
+
+# RIL
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+rild.libargs=-d /dev/smd0
+persist.rild.nitz_plmn=
+persist.rild.nitz_long_ons_0=
+persist.rild.nitz_long_ons_1=
+persist.rild.nitz_long_ons_2=
+persist.rild.nitz_long_ons_3=
+persist.rild.nitz_short_ons_0=
+persist.rild.nitz_short_ons_1=
+persist.rild.nitz_short_ons_2=
+persist.rild.nitz_short_ons_3=
+ril.subscription.types=NV,RUIM
+
+# WiFi:
+ro.wifi.channels=11 11
+dhcp.ap.macaddress=
+dhcp.wlan0.dns1=
+dhcp.wlan0.dns2=
+dhcp.wlan0.dns3=
+dhcp.wlan0.dns4=
+dhcp.wlan0.gateway=
+dhcp.wlan0.ipaddress=
+dhcp.wlan0.leasetime=
+dhcp.wlan0.mask=
+dhcp.wlan0.pid=
+dhcp.wlan0.reason=
+dhcp.wlan0.result=
+dhcp.wlan0.server=
+dhcp.wlan0.vendorInfo=
+dhcp.p2p.dns1=
+dhcp.p2p.dns2=
+dhcp.p2p.dns3=
+dhcp.p2p.dns4=
+dhcp.p2p.gateway=
+dhcp.p2p.ipaddress=
+dhcp.p2p.leasetime=
+dhcp.p2p.mask=
+dhcp.p2p.pid=
+dhcp.p2p.reason=
+dhcp.p2p.result=
+dhcp.p2p.server=
+dhcp.p2p.vendorInfo=
+init.svc.dhcpcd_wlan0=
+init.svc.dhcpcd_p2p=
+init.svc.p2p_supplicant=
+init.svc.iprenew_wlan0=
+net.dns1=
+net.dns2=
+net.dnschange=
+net.p2p-p2p0-0.dns1=
+net.p2p-p2p0-0.dns2=
+net.wlan0.dns1=
+net.wlan0.dns2=
+wlan.driver.status=
+persist.sys.security=
+persist.sys.hotssid.ksc5601=
+wlan.driver.ath=0
+wlan.driver.config=/data/misc/wifi/WCNSS_qcom_cfg.ini
+
+# Bluetooth
+bluetooth.chip.vendor=brcm
+ro.bluetooth.remote.autoconnect=true
+ro.bluetooth.PANenable = 1
+bluetooth.a2dp.sink.enabled=false
+ro.product.bluetooth=4.0
+ro.bt.chipset=Broadcom BCM4334
+ro.bt.version=4.0
+ro.bt.stack=BTL-A
+ro.bt.stack.version=5.0
+ro.bt.profiles=12806403
+service.brcm.bt.activation=0
+service.brcm.bt.srv_active=0
+service.brcm.bt.hcid_active=0
+service.brcm.bt.btld=0
+service.brcm.bt.btld_pid=0
+service.brcm.bt.avrcp_pass_thru=0
+service.brcm.bt.avrcp_toggle=1
+service.brcm.bt.btport_redir_on=1

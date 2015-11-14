@@ -227,29 +227,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
        persist.audio.handset.mic=dmic \
        persist.audio.fluence.mode=endfire \
        persist.audio.lowlatency.rec=false
-
-# Bluetooth additional config...
-PRODUCT_PROPERTY_OVERRIDES += \
-       bluetooth.chip.vendor=brcm \
-       ro.bluetooth.request.master=true \
-       ro.bluetooth.remote.autoconnect=true \
-       ro.bluetooth.PANenable = 1 \
-       bluetooth.a2dp.sink.enabled=false \
-       ro.product.bluetooth=4.0 \
-       ro.bt.chipset=Broadcom BCM4334 \
-       ro.bt.version=4.0 \
-       ro.bt.stack=BTL-A \
-       ro.bt.stack.version=5.0 \
-       ro.bt.profiles=12806403 \
-       service.brcm.bt.activation=0 \
-       service.brcm.bt.srv_active=0 \
-       service.brcm.bt.hcid_active=0 \
-       service.brcm.bt.btld=0 \
-       service.brcm.bt.btld_pid=0 \
-       service.brcm.bt.avrcp_pass_thru=0 \
-       service.brcm.bt.avrcp_toggle=1 \
-       service.brcm.bt.btport_redir_on=1 \
-
+       
 # Better internet browsing & download speed
 PRODUCT_PROPERTY_OVERRIDES += \
        net.tcp.buffersize.default=4096,87380,256960,4096,16384,256960 \
@@ -261,10 +239,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
        net.tcp.buffersize.lte=524288,1048576,2097152,524288,1048576,2097152 \
        net.tcp.buffersize.hsdpa=6144,87380,1048576,6144,87380,1048576 \
        net.tcp.buffersize.evdo_b=6144,87380,1048576,6144,87380,1048576 \
-
-# Set ro.wifi.channels, may help with hotspot
-PRODUCT_PROPERTY_OVERRIDES += \
-       ro.wifi.channels=13 13 \
 
 # Random overrides
 PRODUCT_PROPERTY_OVERRIDES += \
