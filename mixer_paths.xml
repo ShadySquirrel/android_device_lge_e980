@@ -227,7 +227,7 @@
         <ctl name="RX3 MIX1 INP1" value="RX1" />
         <ctl name="RX3 MIX1 INP2" value="RX6" />
         <ctl name="RX4 DSM MUX" value="DSM_INV" />
-        <ctl name="RX3 Digital Volume" value="70" />
+        <ctl name="RX3 Digital Volume" value="65" />
         <ctl name="SLIM TX3 MUX" value="RMIX3" />
     </path>
 
@@ -238,7 +238,7 @@
 
     <path name="speaker-mic">
         <path name="adc3" />
-        <ctl name="DEC4 Volume" value="70" />
+        <ctl name="DEC4 Volume" value="65" />
     </path>
 
     <path name="handset">
@@ -251,12 +251,12 @@
         <ctl name="EAR PA Gain" value="POS_6_DB" />
         <ctl name="DAC1 Switch" value="1" />
         <ctl name="SLIM TX3 MUX" value="RMIX1" />
-        <ctl name="RX1 Digital Volume" value="67" />
+        <ctl name="RX1 Digital Volume" value="62" />
     </path>
 
     <path name="handset-mic">
         <path name="adc1" />
-        <ctl name="DEC6 Volume" value="69" />
+        <ctl name="DEC6 Volume" value="64" />
     </path>
 
     <path name="headphones">
@@ -266,8 +266,8 @@
         <ctl name="RX2 MIX1 INP1" value="RX2" />
         <ctl name="RX2 MIX1 INP2" value="RX7" />
         <ctl name="HPHL DAC Switch" value="1" />
-        <ctl name="RX1 Digital Volume" value="67" />
-        <ctl name="RX2 Digital Volume" value="67" />
+        <ctl name="RX1 Digital Volume" value="62" />
+        <ctl name="RX2 Digital Volume" value="62" />
         <ctl name="HPHL Volume" value="6" />
         <ctl name="HPHR Volume" value="6" />
         <ctl name="SLIM TX5 MUX" value="RMIX2" />
@@ -275,7 +275,7 @@
 
     <path name="headset-mic">
         <path name="adc2" />
-        <ctl name="IIR1 INP1 Volume" value="70" />
+        <ctl name="IIR1 INP1 Volume" value="65" />
         <ctl name="IIR1 INP1 MUX" value="DEC8" />
         <ctl name="ADC2 Volume" value="2" />
     </path>
@@ -286,7 +286,7 @@
 
     <path name="voice-speaker">
         <path name="speaker" />
-        <ctl name="RX3 Digital Volume" value="80" />
+        <ctl name="RX3 Digital Volume" value="75" />
     </path>
 
     <path name="voice-speaker-mic">
@@ -357,8 +357,8 @@
         <ctl name="SLIM TX8 MUX" value="DEC9" />
         <ctl name="DEC9 MUX" value="ADC3" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="DEC7 Volume" value="65" />
-        <ctl name="DEC9 Volume" value="70" />
+        <ctl name="DEC7 Volume" value="60" />
+        <ctl name="DEC9 Volume" value="65" />
         <ctl name="MICBIAS1 CAPLESS Switch" value="0" />
         <ctl name="MICBIAS3 CAPLESS Switch" value="0" />
         <ctl name="IIR1 INP1 MUX" value="DEC7" />
@@ -370,7 +370,7 @@
         <ctl name="SLIM TX8 MUX" value="DEC8" />
         <ctl name="DEC8 MUX" value="DMIC2" />
         <ctl name="SLIM_0_TX Channels" value="Two" />
-        <ctl name="IIR1 INP1 Volume" value="70" />
+        <ctl name="IIR1 INP1 Volume" value="65" />
         <ctl name="IIR1 INP1 MUX" value="DEC7" />
     </path>
 
