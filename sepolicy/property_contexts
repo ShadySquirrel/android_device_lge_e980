@@ -1,1 +1,2 @@
-persist.camera.              u:object_r:camera_prop:s0
+# Already defined in 6.0
+#persist.camera.              u:object_r:camera_prop:s0

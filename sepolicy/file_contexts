@@ -1,4 +1,5 @@
-/system/bin/bridgemgrd             u:object_r:bridge_exec:s0
+# invalid context in 6.0
+#/system/bin/bridgemgrd             u:object_r:bridge_exec:s0
 
 /dev/ks_bridge                     u:object_r:ksbridgehsic_device:s0
 /dev/efs_bridge                    u:object_r:efsbridgehsic_device:s0
