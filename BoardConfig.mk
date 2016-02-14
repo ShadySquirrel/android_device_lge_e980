@@ -21,6 +21,9 @@ BOARD_KERNEL_CMDLINE := vmalloc=600M console=ttyHSL0,115200,n8 lpj=67677 user_de
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/lge/e980/bluetooth/vnd_gk.txt
 
+# We need openSSL...
+BOARD_USES_OPENSSL_SYMBOLS := true
+
 TARGET_BOOTLOADER_BOARD_NAME := geefhd
 TARGET_BOOTLOADER_NAME=e980
 

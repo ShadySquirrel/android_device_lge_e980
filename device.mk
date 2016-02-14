@@ -33,6 +33,9 @@ PRODUCT_PACKAGES += \
        camera.geefhd
 
 PRODUCT_PACKAGES += \
+		libstlport \
+
+PRODUCT_PACKAGES += \
        hostapd_default.conf \
        wpa_supplicant_overlay.conf \
        p2p_supplicant_overlay.conf
