@@ -24,6 +24,9 @@ on init
     mkdir /storage/usbdisk0 0700 root root
     mkdir /factory 0775 system system
     export SECONDARY_STORAGE /storage/sdcard1:/storage/usbdisk0
+    
+    # BoringSSL hack
+    export LD_PRELOAD "/system/lib/libboringssl-compat.so"
 
 on fs
     mount_all ./fstab.geefhd
