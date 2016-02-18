@@ -24,6 +24,9 @@ BOARD_BLUEDROID_VENDOR_CONF := device/lge/e980/bluetooth/vnd_gk.txt
 # We need openSSL...
 BOARD_USES_OPENSSL_SYMBOLS := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
 TARGET_BOOTLOADER_BOARD_NAME := geefhd
 TARGET_BOOTLOADER_NAME=e980
 
