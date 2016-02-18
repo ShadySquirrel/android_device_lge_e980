@@ -363,9 +363,6 @@ PRODUCT_COPY_FILES += \
 
 # Call my vendor makefile
 # $(call inherit-product, vendor/ShadySquirrel/config/common.mk)
-    
-# This is the mako-specific audio package
-$(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)
 
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-dalvik-heap.mk)
 $(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
