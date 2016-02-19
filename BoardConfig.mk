@@ -15,6 +15,13 @@
 #
 # Device specific headers
 TARGET_SPECIFIC_HEADER_PATH := device/lge/e980/include
+BOARD_USES_QCOM_HARDWARE := true
+
+# We need openSSL...
+BOARD_USES_OPENSSL_SYMBOLS := true
+
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
 
 # Bootloader, kernel
 TARGET_BOOTLOADER_BOARD_NAME := geefhd
@@ -26,15 +33,6 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUEDROID_VENDOR_CONF := device/lge/e980/bluetooth/vnd_gk.txt
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/e980/bluetooth
-
-# We need openSSL...
-BOARD_USES_OPENSSL_SYMBOLS := true
-
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
-
-TARGET_BOOTLOADER_BOARD_NAME := geefhd
-TARGET_BOOTLOADER_NAME=e980
 
 # Wi Fi
 WPA_SUPPLICANT_VERSION := VER_0_8_X
@@ -117,7 +115,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 880803840 # 840M
-
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
@@ -134,7 +131,7 @@ TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
 # Camera
-USE_DEVICE_SPECIFIC_CAMERA := true
+USE_DEVICE_SPECIFIC_CAMERA := false
 
 # RIL and HW classes
 BOARD_RIL_CLASS := ../../../device/lge/e980/ril
