@@ -1,3 +1,0 @@
-# for Settings' access to KeyDisabler
-allow system_app touchpanel_sysfs:file rw_file_perms;
-allow system_app touchpanel_sysfs:dir { search };
