@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2011 The Android Open-Source Project
+# Copyright (C) 2013 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,45 +14,6 @@
 # limitations under the License.
 #
 
-TARGET_SPECIFIC_HEADER_PATH := device/lge/e980/include
-
-BOARD_KERNEL_CMDLINE := vmalloc=600M console=ttyHSL0,115200,n8 lpj=67677 user_debug=31 msm_rtb.filter=0x0 ehci-hcd.park=3 coresight-etm.boot_enable=0 androidboot.hardware=geefhd
-
-TARGET_KERNEL_CONFIG := cyanogenmod_e980_defconfig
-
-BOARD_HAVE_BLUETOOTH_BCM := true
-BOARD_BLUEDROID_VENDOR_CONF := device/lge/e980/bluetooth/vnd_gk.txt
-
-TARGET_BOOTLOADER_BOARD_NAME := geefhd
-TARGET_BOOTLOADER_NAME=e980
-
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/e980/bluetooth
-
-BOARD_WLAN_DEVICE                := bcmdhd
-BOARD_WLAN_DEVICE_REV            := bcm4334
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA          := "/system/etc/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
-WIFI_BAND                        := 802_11_ABG
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-
-BOARD_USE_CUSTOM_RECOVERY_FONT:= \"roboto_23x41.h\"
-TARGET_RECOVERY_FSTAB = device/lge/e980/fstab.geefhd
-ENABLE_LOKI_RECOVERY := true
-BOARD_RECOVERY_SWIPE := true
-
--include vendor/lge/e980/BoardConfigVendor.mk
-
-TARGET_OTA_ASSERT_DEVICE := e986,e980,geefhd,e988,gkatt
-
-TARGET_RELEASETOOLS_EXTENSIONS := device/lge/e980/loki
-
-MALLOC_IMPL := dlmalloc
-
-COMMON_GLOBAL_CFLAGS += -DBOARD_CHARGING_CMDLINE_NAME='"androidboot.mode"' -DBOARD_CHARGING_CMDLINE_VALUE='"chargerlogo"'
-
-# Merge from gproj-common...
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_CPU_ABI := armeabi-v7a
@@ -85,7 +46,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
 
-BOARD_EGL_CFG := device/lge/e980/egl.cfg
+BOARD_EGL_CFG := device/lge/gproj-common/egl.cfg
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
@@ -102,8 +63,9 @@ RECOVERY_FSTAB_VERSION = 2
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 23068672 # 22M
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 23068672 # 22M
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2621440000 # 2500M. Actually 2560, but hold some in reserve
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G ACTUALLY... 10 or 24GB, depending on the variant. HAHA. HAHA. HA...
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 880803840 # 840M
+
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 6189744128 # 5.9G
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 
 BOARD_USES_SECURE_SERVICES := true
@@ -123,12 +85,18 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
-BOARD_RIL_CLASS := ../../../device/lge/e980/ril/
+BOARD_RIL_CLASS := ../../../device/lge/gproj-common/ril/
 
-BOARD_HARDWARE_CLASS := device/lge/e980/cmhw/
+BOARD_HARDWARE_CLASS := device/lge/gproj-common/cmhw/
 
 TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
-BOARD_SEPOLICY_DIRS += \
-        device/lge/e980/sepolicy
+# SELinux policies
+# qcom sepolicy
+#include device/qcom/sepolicy/sepolicy.mk
+
+# Common gproj policies
+#BOARD_SEPOLICY_DIRS += \
+#        device/lge/gproj-common/sepolicy
+
