@@ -1,6 +1,7 @@
-[
- {
-   "repository": "lge-kernel-gproj",
-   "target_path": "kernel/lge/gproj"
- }
-]
+[{
+	"repository": "lge-kernel-gproj",
+	"target_path": "kernel/lge/gproj"
+}, {
+	"repository": "android_external_stlport",
+	"target_path": "external/stlport"
+}]

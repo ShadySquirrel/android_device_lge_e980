@@ -30,6 +30,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
+# require stlport
+PRODUCT_PACKAGES += \
+    libstlport
+
 PRODUCT_PACKAGES += \
 	lights.geefhd \
 	camera.geefhd
