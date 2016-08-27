@@ -215,6 +215,3 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/fetch-swv:system/bin/fetch-swv
 
 $(call inherit-product, hardware/qcom/msm8960/msm8960.mk)
-
-# This is the mako-specific audio package
-$(call inherit-product, frameworks/base/data/sounds/AudioPackage10.mk)

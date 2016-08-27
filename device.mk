@@ -19,7 +19,7 @@
 #
 # Everything in this directory will become public
 
-$(call inherit-product, device/lge/gproj-common/gproj.mk)
+$(call inherit-product, device/lge/e980/gproj.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
