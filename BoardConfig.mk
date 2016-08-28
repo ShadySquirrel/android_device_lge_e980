@@ -95,6 +95,9 @@ TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := false
 
+# Logging - disable for now.
+TARGET_USES_LOGD=false
+
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 RECOVERY_FSTAB_VERSION = 2
