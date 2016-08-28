@@ -410,7 +410,7 @@ service qseecomd /system/bin/qseecomd
     user system
     group system
 
-service diag_mdlog /system/bin/logwrapper /system/bin/diag_mdlog -s 100
+service diag_mdlog /system/bin/diag_mdlog -s 100
     class late_start
     disabled
 

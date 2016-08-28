@@ -83,7 +83,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
 
-service conn_init /system/bin/logwrapper /system/bin/hwaddrs
+service conn_init /system/bin/hwaddrs
     class late_start
     user system
     group system wifi
