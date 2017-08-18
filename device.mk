@@ -19,7 +19,7 @@
 #
 # Everything in this directory will become public
 
-$(call inherit-product, device/lge/gproj-common/gproj.mk)
+$(call inherit-product, device/lge/e980/gproj.mk)
 
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
@@ -29,6 +29,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 # if the xhdpi doesn't exist.
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
+
+# require stlport
+PRODUCT_PACKAGES += \
+    libstlport
 
 PRODUCT_PACKAGES += \
 	lights.geefhd \
@@ -56,7 +60,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/bcmdhd.cal:system/etc/wifi/bcmdhd.cal
 
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=480
+	ro.sf.lcd_density=400
 
 PRODUCT_PACKAGES += \
 	hwaddrs
