@@ -40,7 +40,9 @@ PRODUCT_PACKAGES += \
 
 # shimmy shimmy shims
 PRODUCT_PACKAGES += \
-    liblge_symbols
+    liblge_symbols \
+    libshim_camera \
+    libsymbols
 
 # build libril and rild from source
 PRODUCT_PACKAGES += \
