@@ -34,6 +34,10 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     libstlport
 
+# require boringssl-compat
+PRODUCT_PACKAGES += \
+	libboringssl-compat \
+
 # shimmy shimmy shims
 PRODUCT_PACKAGES += \
     liblge_symbols
