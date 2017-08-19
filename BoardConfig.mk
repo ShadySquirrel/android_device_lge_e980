@@ -133,5 +133,11 @@ BOARD_HARDWARE_CLASS := device/lge/e980/cmhw/
 TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
+#Include an expanded selection of fonts
+EXTENDED_FONT_FOOTPRINT := true
+
 BOARD_SEPOLICY_DIRS += \
         device/lge/e980/sepolicy

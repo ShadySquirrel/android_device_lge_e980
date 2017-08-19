@@ -34,6 +34,21 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_PACKAGES += \
     libstlport
 
+# shimmy shimmy shims
+PRODUCT_PACKAGES += \
+    libshim_icu53 \
+    libshim_crypto \
+    libshim_ui \
+    libshim_gui \
+    libshim_binder \
+    libshim_sensors \
+    libshim_camera
+
+# override dex2oat config
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=speed \
+    dalvik.vm.dex2oat-swap=false
+
 PRODUCT_PACKAGES += \
 	lights.geefhd \
 	camera.geefhd
