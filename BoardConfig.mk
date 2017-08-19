@@ -42,8 +42,6 @@ TARGET_RECOVERY_FSTAB = device/lge/e980/fstab.geefhd
 ENABLE_LOKI_RECOVERY := true
 BOARD_RECOVERY_SWIPE := true
 
--include vendor/lge/e980/BoardConfigVendor.mk
-
 TARGET_OTA_ASSERT_DEVICE := e986,e980,geefhd,e988,gkatt
 
 TARGET_RELEASETOOLS_EXTENSIONS := device/lge/e980/loki
