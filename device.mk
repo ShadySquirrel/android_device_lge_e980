@@ -36,13 +36,12 @@ PRODUCT_PACKAGES += \
 
 # shimmy shimmy shims
 PRODUCT_PACKAGES += \
-    libshim_icu53 \
-    libshim_crypto \
-    libshim_ui \
-    libshim_gui \
-    libshim_binder \
-    libshim_sensors \
-    libshim_camera
+    liblge_symbols
+
+# build libril and rild from source
+PRODUCT_PACKAGES += \
+	libril \
+	rild
 
 # override dex2oat config
 PRODUCT_PROPERTY_OVERRIDES += \

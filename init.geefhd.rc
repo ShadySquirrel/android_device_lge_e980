@@ -17,6 +17,9 @@
 import init.gee-common.rc
 
 on init
+	# preload shims
+	export LD_PRELOAD "/system/lib/liblge_symbols.so"
+	
     chmod 0701 /mnt/media_rw
     mkdir /mnt/media_rw/sdcard1 0700 media_rw media_rw
     mkdir /mnt/media_rw/usbdisk0 0700 media_rw media_rw
