@@ -30,6 +30,7 @@
 /dev/hsicctl1             0640   radio      radio
 /dev/hsicctl2             0640   radio      radio
 /dev/hsicctl3             0640   radio      radio
+/dev/diag                 0660   radio      radio
 /dev/video*               0660   system     camera
 /dev/media*               0660   system     camera
 /dev/v4l-subdev*          0660   system     camera
@@ -42,6 +43,8 @@
 /dev/ttyUSB0              0660   system     system
 /dev/block/mmcblk0p8      0660   system     system
 /dev/block/mmcblk0p9      0660   system     system
+/dev/ks_hsic_bridge       0660   system     system
+/dev/efs_hsic_bridge      0660   system     system
 
 # yongmin.jung@lge.com 2012.07.10 change qcks, ks, efsks into system process
 /dev/block/mmcblk0p12     0660   system     system
