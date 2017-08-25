@@ -349,7 +349,6 @@ service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
 
 service netmgrd /system/bin/netmgrd
     class main
-    user root
     group radio
 
 service sensors /system/bin/sensors.qcom
