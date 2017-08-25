@@ -95,9 +95,6 @@ TARGET_USES_OVERLAY := true
 TARGET_USES_SF_BYPASS := true
 TARGET_USES_C2D_COMPOSITION := false
 
-# Logging - disable for now.
-TARGET_USES_LOGD=false
-
 # Recovery
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 RECOVERY_FSTAB_VERSION = 2
@@ -126,11 +123,10 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_RELEASE_CPPFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
 
-BOARD_RIL_CLASS := ../../../device/lge/e980/ril/
+#BOARD_RIL_CLASS := ../../../device/lge/e980/ril/
 
 BOARD_HARDWARE_CLASS := device/lge/e980/cmhw/
 
-TARGET_USES_LOGD := false
 BOARD_USES_LEGACY_MMAP := true
 
 # Enable Minikin text layout engine (will be the default soon)
@@ -146,6 +142,16 @@ USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY:= true
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 HAVE_ADRENO_SOURCE:= false
+
+# Enable dex-preoptimization to speed up first boot sequence
+ifeq ($(HOST_OS),linux)
+  ifeq ($(TARGET_BUILD_VARIANT),user)
+    ifeq ($(WITH_DEXPREOPT),)
+      WITH_DEXPREOPT := true
+    endif
+  endif
+endif
+WITH_DEXPREOPT_BOOT_IMG_ONLY ?= true
 
 BOARD_SEPOLICY_DIRS += \
         device/lge/e980/sepolicy

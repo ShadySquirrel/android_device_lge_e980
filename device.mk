@@ -114,6 +114,11 @@ PRODUCT_PACKAGES += \
 	audio.r_submix.default \
 	libaudio-resampler
 
+# Radio
+PRODUCT_PACKAGES += \
+	librmnetctl \
+    libxml2
+
 # Voice processing
 PRODUCT_PACKAGES += libqcomvoiceprocessing
 
@@ -292,4 +297,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.qualcomm.sensors.smd=true
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	persist.sys.usb.config=mtp
+	persist.sys.usb.config=mtp,adb \
+	ro.adb.secure=0 \
+	ro.secure=0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.dex2oat-filter=speed \
+    dalvik.vm.dex2oat-swap=false
+
+
+$(call inherit-product, frameworks/native/build/phone-xhdpi-2048-dalvik-heap.mk)
+
+$(call inherit-product, hardware/qcom/msm8960/msm8960.mk)

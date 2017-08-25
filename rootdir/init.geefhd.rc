@@ -339,7 +339,7 @@ service bridgemgrd /system/bin/bridgemgrd
 service qmuxd /system/bin/qmuxd
     class main
     user radio
-    group radio audio bluetooth gps
+    group radio audio bluetooth gps diag qcom_diag
 
 service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
     class core
@@ -349,6 +349,7 @@ service kickstart /system/bin/qcks -i /firmware/image/ -r /data/tombstones/mdm/
 
 service netmgrd /system/bin/netmgrd
     class main
+    user root
     group radio
 
 service sensors /system/bin/sensors.qcom
