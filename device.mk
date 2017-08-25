@@ -227,8 +227,13 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml
 
 ## OVERRIDES - should go into system.prop... but too lazy. ##
+# override dex2oat config
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.sf.lcd_density=420
+    dalvik.vm.dex2oat-filter=speed \
+    dalvik.vm.dex2oat-swap=false
+
+PRODUCT_PROPERTY_OVERRIDES += \
+	ro.sf.lcd_density=400
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	ro.bt.bdaddr_path=/data/misc/bdaddr
