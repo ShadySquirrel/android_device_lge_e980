@@ -105,7 +105,6 @@ PRODUCT_PACKAGES += \
 	gralloc.msm8960 \
 	copybit.msm8960 \
 	memtrack.msm8960 \
-	sensors.msm8960
 
 PRODUCT_PACKAGES += \
 	audio_policy.msm8960 \
