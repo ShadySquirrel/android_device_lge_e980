@@ -29,6 +29,20 @@ on init
     mkdir /persist 0771 system system
     mkdir /firmware 0771 system system
 
+	#Create directory used by sensor subsystem(dsps)
+    mkdir /data/system/sensors
+    chmod 665 /data/system/sensors
+    write /data/system/sensors/settings 1
+    restorecon /data/system/sensors/settings
+    chmod 660 /data/system/sensors/settings
+
+    # AKM setting data
+    mkdir /data/misc/sensors
+    chmod 775 /data/misc/sensors
+
+    mkdir /persist/sensors
+    chmod 775 /persist/sensors
+	
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
@@ -46,7 +60,7 @@ on init
 
 on charger-fs
     mount ext4 /dev/block/platform/msm_sdcc.1/by-name/system  /system ro barrier=1
-    start rmt_storage
+#    start rmt_storage
 
 on fs
     mount_all ./fstab.geefhd
@@ -195,20 +209,6 @@ on post-fs-data
     mkdir /data/system 0775 system system
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
-    #Create directory used by sensor subsystem(dsps)
-    mkdir /data/system/sensors
-    chmod 665 /data/system/sensors
-    write /data/system/sensors/settings 1
-    restorecon /data/system/sensors/settings
-    chmod 660 /data/system/sensors/settings
-
-    # AKM setting data
-    mkdir /data/misc/sensors
-    chmod 775 /data/misc/sensors
-
-    mkdir /persist/sensors
-    chmod 775 /persist/sensors
-
     #Provide the access to hostapd.conf only to root and group
     chmod 0660 /data/hostapd/hostapd.conf
 
@@ -351,10 +351,10 @@ service netmgrd /system/bin/netmgrd
     class main
     group radio
 
-#service sensors /system/bin/sensors.qcom
-#    class late_start
-#    user root
-#    group root radio system
+service sensors /system/bin/sensors.qcom
+    class late_start
+    user root
+    group root radio system
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
