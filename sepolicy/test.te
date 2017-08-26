@@ -1,0 +1,22 @@
+#============= init ==============
+allow init debugfs:dir mounton;
+
+#============= mdm_helper ==============
+allow mdm_helper vfat:file { read getattr open };
+
+#============= mpdecision ==============
+allow mpdecision mpdecision_socket:dir { write add_name };
+allow mpdecision mpdecision_socket:sock_file { create setattr };
+allow mpdecision socket_device:sock_file { write setattr };
+
+#============= toolbox ==============
+allow toolbox init:fifo_file { write read getattr };
+allow toolbox init:unix_stream_socket connectto;
+allow toolbox property_socket:sock_file write;
+
+#============= vold ==============
+allow vold sensors_persist_file:dir { read ioctl open };
+
+#============ netmgrd ===========
+allow netmgrd self:capability dac_override;
+allow netmgrd self:packet_socket create_socket_perms;
