@@ -351,10 +351,10 @@ service netmgrd /system/bin/netmgrd
     class main
     group radio
 
-service sensors /system/bin/sensors.qcom
-    class late_start
-    user root
-    group root radio system
+#service sensors /system/bin/sensors.qcom
+#    class late_start
+#    user root
+#    group root radio system
 
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
@@ -440,10 +440,10 @@ service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
    user system
    group system
 
-service qcamerasvr /system/bin/mm-qcamera-daemon
-    class late_start
-    user camera
-    group camera system inet input
+#service qcamerasvr /system/bin/mm-qcamera-daemon
+#    class late_start
+#    user camera
+#    group camera system inet input
 
 # bugreport is triggered by holding down volume down, volume up and power
 service bugreport /system/bin/dumpstate -d -p -B \
